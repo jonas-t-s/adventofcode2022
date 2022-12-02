@@ -11,8 +11,16 @@ with open(file) as inp:
             readedlines.append([])
         else:
             readedlines[state].append(int(line))
-print(readedlines)
+#print(readedlines)
 result = []
 for entity in readedlines:
     result.append(np.sum(entity))
 print(np.max(result))
+### Part 2
+
+result = np.sort(result)
+print(result)
+res= 0
+for i in range(3):
+    res += result[len(result) -i-1]
+print(res)
